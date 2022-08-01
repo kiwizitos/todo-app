@@ -11,28 +11,17 @@ import Header from './Components/Header';
 import TaskDetails from './Components/TaskDetails';
 
 function App() {
-  const [tasks, setTasks] = useState([
-    {
-      id : '1',
-      title: 'teste',
-      completed: false,
-    },
-    {
-      id : '2',
-      title: 'Learn TypeScript',
-      completed: true,
-    },
-  ]);
+  const [tasks, setTasks] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const { data } = await axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10');
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const { data } = await axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10');
 
-      setTasks(data);
-    };
+  //     setTasks(data);
+  //   };
 
-    fetchData();
-  }, [])
+  //   fetchData();
+  // }, [])
 
   const handleTaskClick = (taskId) => {
     const newTasks = tasks.map(task => {
